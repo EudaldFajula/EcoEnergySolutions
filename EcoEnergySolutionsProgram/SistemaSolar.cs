@@ -20,6 +20,11 @@ namespace EcoEnergySolutionsProgram
             Data = DateTime.Now;
             TipusEnergia = "Solar";
         }
-        public SistemaSolar() { }
+        public SistemaSolar() 
+        {
+            HoresDeSol = 2;
+            Data = DateTime.Now;
+            TipusEnergia = "Solar";
+        }
     }
 }

@@ -20,6 +20,11 @@ namespace EcoEnergySolutionsProgram
             Data = DateTime.Now;
             TipusEnergia = "Hidroelectric";
         }
-        public SistemaHidroelectric() { }
+        public SistemaHidroelectric() 
+        {
+            CabalAigua = 21;
+            Data = DateTime.Now;
+            TipusEnergia = "Hidroelectric";
+        }
     }
 }
