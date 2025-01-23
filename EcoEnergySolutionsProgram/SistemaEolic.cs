@@ -20,6 +20,12 @@ namespace EcoEnergySolutionsProgram
             Data = DateTime.Now;
             TipusEnergia = "Eolic";
         }
-        public SistemaEolic() { }
+        public SistemaEolic() 
+        {
+            VelocitatVent = 6;
+            Data = DateTime.Now;
+            TipusEnergia = "Eolic";
+
+        }
     }
 }
