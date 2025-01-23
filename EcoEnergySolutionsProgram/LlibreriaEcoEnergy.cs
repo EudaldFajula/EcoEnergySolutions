@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace EcoEnergySolutionsProgram
 {
     public static class Metodes
@@ -130,12 +129,21 @@ namespace EcoEnergySolutionsProgram
             {
                 try
                 {
-                    numCheck = int.Parse(Console.ReadLine());
-                    exit = false;
-                    if (numCheck < min || numCheck > max)
+                    string? input = Console.ReadLine();
+                    if (int.TryParse(input, out numCheck))
                     {
-                        exit = true;
-                        Console.WriteLine(MsgError);
+                        if (numCheck >= min && numCheck <= max)
+                        {
+                            exit = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine(MsgError);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine(MsgTryCatch);
                     }
                 }
                 catch (FormatException)
@@ -160,12 +168,14 @@ namespace EcoEnergySolutionsProgram
             {
                 try
                 {
-                    numCheck = double.Parse(Console.ReadLine());
-                    exit = false;
-                    //Valida si el minim es 5 o 20 per fer un if diferent   
-                    if (min == 5 || min == 20)
+                    string? input = Console.ReadLine();
+                    if (double.TryParse(input, out numCheck))
                     {
-                        if (numCheck <= min)
+                        if (numCheck >= min && (min != 5 && min != 20) || numCheck > min && (min == 5 || min == 20))
+                        {
+                            exit = false;
+                        }
+                        else
                         {
                             Console.WriteLine(MsgMin, min);
                             exit = true;
@@ -173,11 +183,7 @@ namespace EcoEnergySolutionsProgram
                     }
                     else
                     {
-                        if (numCheck < min)
-                        {
-                            Console.WriteLine(MsgMin, min);
-                            exit = true;
-                        }
+                        Console.WriteLine(MsgTryCatch);
                     }
                 }
                 catch (FormatException)

@@ -1,6 +1,4 @@
-﻿using EcoEnergySolutionsProgram;
-using System;
-using System.Diagnostics;
+﻿using System;
 
 namespace EcoEnergySolutionsProgram
 {
