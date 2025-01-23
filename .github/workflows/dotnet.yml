@@ -24,4 +24,4 @@ jobs:
     - name: Build
       run: dotnet build EcoEnergySolutions.sln --no-restore
     - name: Test
-      run: dotnet test EcoEnergySolutions.sln.sln --no-build --verbosity normal
+      run: dotnet test EcoEnergySolutions.sln --no-build --verbosity normal
