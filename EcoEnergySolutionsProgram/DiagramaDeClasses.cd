@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EcoEnergySolutionsProgram.SistemaEnergia">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAACAIAAAAAAAAAAAAAABBAAAAAAAAAAAA=</HashCode>
+      <FileName>SistemaEnergia.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EcoEnergySolutionsProgram.SistemaSolar">
+    <Position X="7.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAACAIAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>SistemaSolar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EcoEnergySolutionsProgram.SistemaEolic">
+    <Position X="5.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAoAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>SistemaEolic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EcoEnergySolutionsProgram.SistemaHidroelectric">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAIAAAAAAAAAAAAAAABAAAAAAEAAAAA=</HashCode>
+      <FileName>SistemaHidroelectric.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="EcoEnergySolutionsProgram.ICalculEnergia">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAIAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>ICalculEnergia.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
