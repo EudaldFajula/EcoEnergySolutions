@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoEnergySolutionsProgram", "EcoEnergySolutionsProgram\EcoEnergySolutionsProgram.csproj", "{11DFA2C6-0099-4161-BA95-93F69BF0F8D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoEnergyTestXUnit", "EcoEnergyTestXUnit\EcoEnergyTestXUnit.csproj", "{433FD538-E315-4881-AE07-EAA3A90C1EE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{11DFA2C6-0099-4161-BA95-93F69BF0F8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11DFA2C6-0099-4161-BA95-93F69BF0F8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11DFA2C6-0099-4161-BA95-93F69BF0F8D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433FD538-E315-4881-AE07-EAA3A90C1EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433FD538-E315-4881-AE07-EAA3A90C1EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433FD538-E315-4881-AE07-EAA3A90C1EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433FD538-E315-4881-AE07-EAA3A90C1EE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
