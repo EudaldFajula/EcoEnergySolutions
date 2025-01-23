@@ -16,8 +16,10 @@ namespace EcoEnergySolutionsProgram
                                             "1. Energia Solar\t\t(Dada mes gran que 1)\n" +
                                             "2. Energia Eolica\t\t(Dada mes gran que 5)\n" +
                                             "3. Energia Hidroelectrica\t(Dada mes gran que 20)\n",
-                        MsgDadaEnergia = "Quina dada vols fer servir?",
-                        MsgDadaEnergiaError = "Torna a indicar quina dada vols fer servir";
+                        MsgDadaEnergiaError = "Torna a indicar quina dada vols fer servir",
+                        MsgDadaEnergiaEolica = "Escriu la velocitat del vent (Valor minim 5 m/s)",
+                        MsgDadaEnergiaSolar = "Escriu les hores del sol (Valor superior a 1 hora)",
+                        MsgDadaEnegiaHidroelectrica = "Escriu el cabal d'aigua ≈ (Valor minim 20 m^3)";
             int quantitatSimulacions, tipusSimulacio;
             Console.WriteLine(MsgQuantitatSimulacions);
             //Valida que el numero introduït estigui entre el 0 i el 100
@@ -35,7 +37,7 @@ namespace EcoEnergySolutionsProgram
                 {
                     //Cas 1 Sistema Solar
                     case 1:
-                        Console.WriteLine(MsgDadaEnergia);
+                        Console.WriteLine(MsgDadaEnergiaSolar);
                         SistemaSolar InstanciaSistemaSolar = new SistemaSolar(ValidateDoubleNum(1));
                         while (!InstanciaSistemaSolar.ValidarDades())
                         {
@@ -46,7 +48,7 @@ namespace EcoEnergySolutionsProgram
                         break;
                     //Cas 2 Sistema Eolic
                     case 2:
-                        Console.WriteLine(MsgDadaEnergia);
+                        Console.WriteLine(MsgDadaEnergiaEolica);
                         SistemaEolic InstanciaSistemaEolic = new SistemaEolic(ValidateDoubleNum(5));
                         while (!InstanciaSistemaEolic.ValidarDades())
                         {
@@ -57,7 +59,7 @@ namespace EcoEnergySolutionsProgram
                         break;
                     //Cas 3 Sistema Hidroelectric
                     case 3:
-                        Console.WriteLine(MsgDadaEnergia);
+                        Console.WriteLine(MsgDadaEnegiaHidroelectrica);
                         SistemaHidroelectric InstanciaSistemaHidro = new SistemaHidroelectric(ValidateDoubleNum(20));
                         while (!InstanciaSistemaHidro.ValidarDades())
                         {
@@ -79,7 +81,10 @@ namespace EcoEnergySolutionsProgram
         public static void PrintarSimulacions(SistemaEnergia[] arrayEnergies, SistemaEnergia[] arrayGranEnergies)
         {
             const string TipusTaula = "|\tTipus\t\t|\t\tData\t\t|\tEnergia Generada\t|\n"
-                + "-----------------------------------------------------------------------------------------";
+                + "-----------------------------------------------------------------------------------------",
+                MsgSortir = "Escriu 1 per sortir";
+            bool sortir = true;
+            int sortirInt;
             int j = 0;
             //Possa les noves dades en un nou array mes gran per guardar les taules anteriors
             for (int i = 0; i < arrayGranEnergies.Length; i++)
@@ -96,6 +101,17 @@ namespace EcoEnergySolutionsProgram
             {
                 arrayGranEnergies[i].MostrarInfo();
             }
+            Console.WriteLine(MsgSortir);
+            while (sortir)
+            {
+                sortirInt = ValidateIntNum(0, 2);
+                switch (sortirInt)
+                {
+                    case 1:
+                        sortir = false;
+                        break;
+                }
+            }
         }
         /// <summary>
         /// Enseña la pantalla de menu
@@ -104,11 +120,13 @@ namespace EcoEnergySolutionsProgram
         /// <returns>No retorna res</returns>
         public static void Menu()
         {
-            const string Titol = " _____          _____                            ____        _       _   _                 \r\n| ____|___ ___ | ____|_ __   ___ _ __ __ _ _   _/ ___|  ___ | |_   _| |_(_) ___  _ __  ___ \r\n|  _| / __/ _ \\|  _| | '_ \\ / _ \\ '__/ _` | | | \\___ \\ / _ \\| | | | | __| |/ _ \\| '_ \\/ __|\r\n| |__| (_| (_) | |___| | | |  __/ | | (_| | |_| |___) | (_) | | |_| | |_| | (_) | | | \\__ \\\r\n|_____\\___\\___/|_____|_| |_|\\___|_|  \\__, |\\__, |____/ \\___/|_|\\__,_|\\__|_|\\___/|_| |_|___/\r\n                                     |___/ |___/                                           ";
-            const string MenuPrincipal = "1. Iniciar simulació\n2. Ensenyar simulacións\n3. Sortir",
+            const string Titol = " ██████████                   ██████████                                                  \r\n░░███░░░░░█                  ░░███░░░░░█                                                  \r\n ░███  █ ░   ██████   ██████  ░███  █ ░  ████████    ██████  ████████   ███████ █████ ████\r\n ░██████    ███░░███ ███░░███ ░██████   ░░███░░███  ███░░███░░███░░███ ███░░███░░███ ░███ \r\n ░███░░█   ░███ ░░░ ░███ ░███ ░███░░█    ░███ ░███ ░███████  ░███ ░░░ ░███ ░███ ░███ ░███ \r\n ░███ ░   █░███  ███░███ ░███ ░███ ░   █ ░███ ░███ ░███░░░   ░███     ░███ ░███ ░███ ░███ \r\n ██████████░░██████ ░░██████  ██████████ ████ █████░░██████  █████    ░░███████ ░░███████ \r\n░░░░░░░░░░  ░░░░░░   ░░░░░░  ░░░░░░░░░░ ░░░░ ░░░░░  ░░░░░░  ░░░░░      ░░░░░███  ░░░░░███ \r\n                                                                       ███ ░███  ███ ░███ \r\n                                                                      ░░██████  ░░██████  \r\n                                                                       ░░░░░░    ░░░░░░   \r\n  █████████           ████              █████     ███                                     \r\n ███░░░░░███         ░░███             ░░███     ░░░                                      \r\n░███    ░░░   ██████  ░███  █████ ████ ███████   ████   ██████  ████████    █████         \r\n░░█████████  ███░░███ ░███ ░░███ ░███ ░░░███░   ░░███  ███░░███░░███░░███  ███░░          \r\n ░░░░░░░░███░███ ░███ ░███  ░███ ░███   ░███     ░███ ░███ ░███ ░███ ░███ ░░█████         \r\n ███    ░███░███ ░███ ░███  ░███ ░███   ░███ ███ ░███ ░███ ░███ ░███ ░███  ░░░░███        \r\n░░█████████ ░░██████  █████ ░░████████  ░░█████  █████░░██████  ████ █████ ██████         \r\n ░░░░░░░░░   ░░░░░░  ░░░░░   ░░░░░░░░    ░░░░░  ░░░░░  ░░░░░░  ░░░░ ░░░░░ ░░░░░░          ";
+            const string MenuPrincipal = "\n1. Iniciar simulació\n2. Ensenyar simulacións\n3. Sortir",
                 MsgInfo = "Per començar el programa escriu 1, per enseñar la taula escriu 2 i per sortir escriu 3";
             //Printa el menu principal
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(Titol);
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(MenuPrincipal);
             Console.WriteLine(MsgInfo);
         }
@@ -132,7 +150,7 @@ namespace EcoEnergySolutionsProgram
                     string? input = Console.ReadLine();
                     if (int.TryParse(input, out numCheck))
                     {
-                        if (numCheck >= min && numCheck <= max)
+                        if (numCheck > min && numCheck < max)
                         {
                             exit = false;
                         }
